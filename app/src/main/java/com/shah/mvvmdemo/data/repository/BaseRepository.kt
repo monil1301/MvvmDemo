@@ -1,6 +1,7 @@
 package com.shah.mvvmdemo.data.repository
 
 import com.shah.mvvmdemo.data.network.Resource
+import com.shah.mvvmdemo.data.network.UserApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
@@ -23,4 +24,6 @@ abstract class BaseRepository {
             }
         }
     }
+
+    suspend fun logout(api: UserApi) = safeApoiCall { api.logout() }
 }

@@ -62,7 +62,7 @@
         android:background="@drawable/edit_text_background"
         android:text="Register"
         android:enabled="false"
-        android:textColor="#BDBDBD"
+        android:textColor="#ffffff"
         android:backgroundTint="@android:color/holo_orange_dark" />
 
     <ProgressBar

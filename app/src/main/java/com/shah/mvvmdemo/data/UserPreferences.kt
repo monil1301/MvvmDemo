@@ -2,10 +2,7 @@ package com.shah.mvvmdemo.data
 
 import android.content.Context
 import androidx.datastore.DataStore
-import androidx.datastore.preferences.Preferences
-import androidx.datastore.preferences.createDataStore
-import androidx.datastore.preferences.edit
-import androidx.datastore.preferences.preferencesKey
+import androidx.datastore.preferences.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
@@ -29,6 +26,11 @@ class UserPreferences (private val context: Context) {
         }
     }
 
+    suspend fun clear() {
+        dataStore.edit {
+            it.clear()
+        }
+    }
     companion object {
         private val keyAuth = preferencesKey<String>("keyAuth")
     }

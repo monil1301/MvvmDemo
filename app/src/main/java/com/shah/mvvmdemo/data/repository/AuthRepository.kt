@@ -11,4 +11,7 @@ class AuthRepository(private val api: AuthApi, private val preferences: UserPref
     suspend fun saveAuthToken(token: String) {
         preferences.saveAuthToken(token)
     }
+
+    suspend fun signup(name: String, email: String, password: String, password_confirmation: String) =
+        safeApoiCall { api.signup(name, email, password, password_confirmation) }
 }

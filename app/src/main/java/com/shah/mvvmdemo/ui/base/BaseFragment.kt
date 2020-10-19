@@ -11,11 +11,14 @@ import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.shah.mvvmdemo.data.UserPreferences
 import com.shah.mvvmdemo.data.network.ApiBuilder
+import com.shah.mvvmdemo.data.network.UserApi
 import com.shah.mvvmdemo.data.repository.BaseRepository
+import com.shah.mvvmdemo.ui.auth.AuthActivity
+import com.shah.mvvmdemo.ui.startActivity
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
-abstract class BaseFragment<viewModal: ViewModel, viewBinding: ViewBinding, repository: BaseRepository>: Fragment() {
+abstract class BaseFragment<viewModal: BaseViewModel, viewBinding: ViewBinding, repository: BaseRepository>: Fragment() {
 
     protected lateinit var userPreferences: UserPreferences
     protected lateinit var authToken: String
@@ -33,9 +36,17 @@ abstract class BaseFragment<viewModal: ViewModel, viewBinding: ViewBinding, repo
         val factory = ViewModelFactory(getFragmentRepository())
         fragmentViewModel = ViewModelProvider(this,factory).get(getViewModel())
         lifecycleScope.launch {
-            authToken = userPreferences.authToken.first().toString()
+            userPreferences.authToken.first().toString()
         }
         return binding.root
+    }
+
+    fun logout() = lifecycleScope.launch {
+        val authToken = userPreferences.authToken.first()
+        val api = apiBuilder.buildApi(UserApi::class.java,authToken)
+        fragmentViewModel.logout(api)
+        userPreferences.clear()
+        requireActivity().startActivity(AuthActivity::class.java)
     }
 
     abstract fun getViewModel() : Class<viewModal>
