@@ -1,14 +1,13 @@
 package com.shah.mvvmdemo.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.asLiveData
 import com.shah.mvvmdemo.R
 import com.shah.mvvmdemo.data.UserPreferences
 import com.shah.mvvmdemo.ui.auth.AuthActivity
+import com.shah.mvvmdemo.ui.home.HomeActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,9 +16,8 @@ class MainActivity : AppCompatActivity() {
 
         val userPreferences = UserPreferences(this)
         userPreferences.authToken.asLiveData().observe(this, Observer { authToken ->
-            Toast.makeText(this, authToken , Toast.LENGTH_SHORT).show()
+            val activity = if (authToken != null) HomeActivity::class.java else AuthActivity::class.java
+            startActivity(activity)
         })
-        finish()
-        startActivity(Intent(this, AuthActivity::class.java))
     }
 }

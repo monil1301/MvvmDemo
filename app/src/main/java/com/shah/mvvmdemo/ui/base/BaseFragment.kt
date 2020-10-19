@@ -7,14 +7,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.shah.mvvmdemo.data.UserPreferences
 import com.shah.mvvmdemo.data.network.ApiBuilder
 import com.shah.mvvmdemo.data.repository.BaseRepository
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 abstract class BaseFragment<viewModal: ViewModel, viewBinding: ViewBinding, repository: BaseRepository>: Fragment() {
 
     protected lateinit var userPreferences: UserPreferences
+    protected lateinit var authToken: String
     protected lateinit var binding: viewBinding
     protected lateinit var fragmentViewModel: viewModal
     protected val apiBuilder = ApiBuilder()
@@ -28,6 +32,9 @@ abstract class BaseFragment<viewModal: ViewModel, viewBinding: ViewBinding, repo
         binding = getFragmentBinding(inflater, container)
         val factory = ViewModelFactory(getFragmentRepository())
         fragmentViewModel = ViewModelProvider(this,factory).get(getViewModel())
+        lifecycleScope.launch {
+            authToken = userPreferences.authToken.first().toString()
+        }
         return binding.root
     }
 

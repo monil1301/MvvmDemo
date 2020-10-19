@@ -18,4 +18,8 @@ class AuthViewModel(private val authRepository: AuthRepository) : ViewModel() {
     fun login(email: String, password: String) = viewModelScope.launch {
         _loginResponse.value = authRepository.login(email, password)
     }
+
+    fun saveAuthToken(token: String) = viewModelScope.launch {
+        authRepository.saveAuthToken(token)
+    }
 }

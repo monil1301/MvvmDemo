@@ -1,8 +1,14 @@
 package com.shah.mvvmdemo.data.repository
 
+import com.shah.mvvmdemo.data.UserPreferences
 import com.shah.mvvmdemo.data.network.AuthApi
 
-class AuthRepository(private val api: AuthApi): BaseRepository()  {
+class AuthRepository(private val api: AuthApi, private val preferences: UserPreferences) :
+    BaseRepository() {
 
     suspend fun login(email: String, password: String) = safeApoiCall { api.login(email, password) }
+
+    suspend fun saveAuthToken(token: String) {
+        preferences.saveAuthToken(token)
+    }
 }
