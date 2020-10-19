@@ -1,4 +1,4 @@
-package com.shah.mvvmdemo.response
+package com.shah.mvvmdemo.data.response
 
 data class User(
     val access_token: String,

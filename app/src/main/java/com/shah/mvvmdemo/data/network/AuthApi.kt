@@ -1,6 +1,6 @@
-package com.shah.mvvmdemo.network
+package com.shah.mvvmdemo.data.network
 
-import com.shah.mvvmdemo.response.LoginResponse
+import com.shah.mvvmdemo.data.response.LoginResponse
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST

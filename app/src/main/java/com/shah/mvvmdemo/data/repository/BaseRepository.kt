@@ -1,6 +1,6 @@
-package com.shah.mvvmdemo.repository
+package com.shah.mvvmdemo.data.repository
 
-import com.shah.mvvmdemo.network.Resource
+import com.shah.mvvmdemo.data.network.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException

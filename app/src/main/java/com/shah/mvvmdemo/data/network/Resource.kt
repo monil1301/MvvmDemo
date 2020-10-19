@@ -1,4 +1,4 @@
-package com.shah.mvvmdemo.network
+package com.shah.mvvmdemo.data.network
 
 import okhttp3.ResponseBody
 

@@ -1,4 +1,4 @@
-package com.shah.mvvmdemo.auth
+package com.shah.mvvmdemo.ui.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

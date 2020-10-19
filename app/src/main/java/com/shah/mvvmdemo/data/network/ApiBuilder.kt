@@ -1,8 +1,7 @@
-package com.shah.mvvmdemo.network
+package com.shah.mvvmdemo.data.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 class ApiBuilder {
     companion object {

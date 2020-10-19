@@ -1,4 +1,4 @@
-package com.shah.mvvmdemo
+package com.shah.mvvmdemo.data
 
 import android.content.Context
 import androidx.datastore.DataStore
