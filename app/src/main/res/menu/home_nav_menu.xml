@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/featured_item"
+        android:title="Featured"
+        android:icon="@drawable/ic_featured"/>
+
+    <item
+        android:id="@+id/search_item"
+        android:title="Search"
+        android:icon="@drawable/ic_search"/>
+
+    <item
+        android:id="@+id/my_courses_item"
+        android:title="My Courses"
+        android:icon="@drawable/ic_my_courses"/>
+
+    <item
+        android:id="@+id/wish_list_item"
+        android:title="Wishlist"
+        android:icon="@drawable/ic_wishlist"/>
+
+    <item
+        android:id="@+id/account_item"
+        android:title="Account"
+        android:icon="@drawable/ic_account"/>
+
+</menu>

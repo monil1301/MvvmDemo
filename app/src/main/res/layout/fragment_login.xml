@@ -75,4 +75,14 @@
         android:textStyle="bold"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@id/login_button"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="bhavesh"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="370dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

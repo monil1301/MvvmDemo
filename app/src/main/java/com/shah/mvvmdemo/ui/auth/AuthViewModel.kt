@@ -34,4 +34,5 @@ class AuthViewModel(private val authRepository: AuthRepository) : BaseViewModel(
         viewModelScope.launch {
             _signupResponse.value = authRepository.signup(name, email, password, password_confirmation)
         }
+
 }

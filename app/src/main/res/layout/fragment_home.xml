@@ -34,7 +34,7 @@
             <TextView
                 android:id="@+id/text_view_name"
 
-                tools:text="Belal Khan" />
+                tools:text="Monil Shah" />
 
         </TableRow>
 
@@ -47,7 +47,7 @@
             <TextView
                 android:id="@+id/text_view_Email"
 
-                tools:text="probelalkhan@gmail.com" />
+                tools:text="mvshah1301@gmail.com" />
 
         </TableRow>
 

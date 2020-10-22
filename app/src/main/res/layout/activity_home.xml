@@ -10,8 +10,34 @@
         android:id="@+id/homeFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_home" />
+        app:navGraph="@navigation/nav_home"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/shadow"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:id="@+id/shadow"
+        android:background="@drawable/bottom_nav_bar_shadow"
+        app:layout_constraintBottom_toTopOf="@id/home_bottom_nav_bar" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/home_bottom_nav_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        android:theme="@style/BottomNavigationView"
+        app:itemIconSize="@dimen/bottom_navigation_icon_size"
+        app:itemIconTint="@drawable/bottom_nav_bar_color"
+        app:itemTextAppearanceActive="@style/BottomNavigationView.textSize"
+        app:itemTextAppearanceInactive="@style/BottomNavigationView.textSize"
+        app:itemTextColor="@drawable/bottom_nav_bar_color"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/home_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_home"
-    app:startDestination="@id/homeFragment">
-
+    app:startDestination="@id/featuredFragment">
+    <fragment
+        android:id="@+id/featuredFragment"
+        android:name="com.shah.mvvmdemo.ui.featured.FeaturedFragment"
+        android:label="fragment_featured"
+        tools:layout="@layout/fragment_featured" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.shah.mvvmdemo.ui.home.HomeFragment"

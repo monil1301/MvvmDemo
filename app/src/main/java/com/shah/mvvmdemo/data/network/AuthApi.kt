@@ -16,6 +16,7 @@ interface AuthApi {
         @Field("password") password: String
     ) : LoginResponse
 
+
     @FormUrlEncoded
     @Headers("Accept: application/json")
     @POST("auth/signup")
