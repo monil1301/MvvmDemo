@@ -68,4 +68,7 @@ dependencies {
 
     //implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0-alpha07"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+
+    //piccaso for image loading
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/home_toolbar"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/home_menu"/>
+
     <fragment
         android:id="@+id/homeFragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
@@ -13,12 +21,12 @@
         android:layout_height="0dp"
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_home"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_toolbar"
         app:layout_constraintBottom_toTopOf="@id/shadow"/>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="4dp"
         android:id="@+id/shadow"
         android:background="@drawable/bottom_nav_bar_shadow"
         app:layout_constraintBottom_toTopOf="@id/home_bottom_nav_bar" />

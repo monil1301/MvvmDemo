@@ -7,4 +7,7 @@
     <color name="bottom_nav_icon_selected">#ed4e4e</color>
     <color name="bottom_nav_icon_not_selected">#737373</color>
     <color name="bottom_nav_background">#f5f5f5</color>
+    <color name="ratings_active">#f4c24f</color>
+    <color name="ratings_normal">#e1dde3</color>
+    <color name="transparent">@android:color/transparent</color>
 </resources>
