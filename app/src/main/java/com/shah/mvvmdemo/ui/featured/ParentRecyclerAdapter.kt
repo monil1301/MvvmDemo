@@ -12,7 +12,7 @@ import com.shah.mvvmdemo.R
 import com.shah.mvvmdemo.data.response.CourseCategory
 import com.squareup.picasso.Picasso
 
-class ParentRecyclerAdapter(private val context: Context, private val categoryList: ArrayList<CourseCategory?>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class ParentRecyclerAdapter(private val context: Context, private val categoryList: ArrayList<CourseCategory?>, private val onClick: InnerRecyclerAdapter.OnClick) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     class ParentRecyclerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val title = itemView.findViewById(R.id.inner_recycler_title) as TextView
@@ -48,7 +48,7 @@ class ParentRecyclerAdapter(private val context: Context, private val categoryLi
             holder.title.text = category.title
             holder.recyclerView.layoutManager =
                 LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-            holder.recyclerView.adapter = InnerRecyclerAdapter(category.courses)
+            holder.recyclerView.adapter = InnerRecyclerAdapter(category.courses,onClick)
         } else {
             val holder = viewHolder as ImageBannerViewHolder
             Picasso.get()

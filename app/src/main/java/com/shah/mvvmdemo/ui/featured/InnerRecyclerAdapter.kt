@@ -13,7 +13,11 @@ import com.shah.mvvmdemo.R
 import com.shah.mvvmdemo.data.response.CourseDetails
 import com.squareup.picasso.Picasso
 
-class InnerRecyclerAdapter(private val courses: List<CourseDetails>) : RecyclerView.Adapter<InnerRecyclerAdapter.InnerRecyclerViewHolder>() {
+class InnerRecyclerAdapter(private val courses: List<CourseDetails>, private val onClick: OnClick) : RecyclerView.Adapter<InnerRecyclerAdapter.InnerRecyclerViewHolder>() {
+
+    interface OnClick{
+        fun gotoDetails(course: CourseDetails)
+    }
 
     class InnerRecyclerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val imageView = itemView.findViewById(R.id.course_image_view) as ImageView
@@ -50,6 +54,9 @@ class InnerRecyclerAdapter(private val courses: List<CourseDetails>) : RecyclerV
             holder.bestseller.visibility = TextView.VISIBLE
         } else {
             holder.bestseller.visibility = TextView.GONE
+        }
+        holder.itemView.setOnClickListener {
+            onClick.gotoDetails(course)
         }
     }
 
