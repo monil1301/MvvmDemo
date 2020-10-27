@@ -48,7 +48,7 @@ class ParentRecyclerAdapter(private val context: Context, private val categoryLi
             holder.title.text = category.title
             holder.recyclerView.layoutManager =
                 LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
-            holder.recyclerView.adapter = InnerRecyclerAdapter(category.courses,onClick)
+            holder.recyclerView.adapter = InnerRecyclerAdapter(category.courses,onClick,context)
         } else {
             val holder = viewHolder as ImageBannerViewHolder
             Picasso.get()

@@ -7,7 +7,7 @@ import kotlinx.android.parcel.Parcelize
 data class CourseDetails(
     val imageUrl: String,
     val title: String,
-    val teacher: String,
+    val teacher: TeacherDetails,
     val description: String,
     val rating: Float,
     val totalRatings: String,
@@ -16,5 +16,11 @@ data class CourseDetails(
     val isBestseller: Boolean,
     val timeWatched: Float,
     val updatedOn: String,
-    val language: String
+    val language: String,
+    val toLearnList: ArrayList<String>,
+    val detailedDescription: Int,
+    val requirementsList: ArrayList<String>,
+    val lectures: Int,
+    val time: String,
+    val curriculum: ArrayList<CurriculumDetails>
 ) : Parcelable

@@ -1,5 +1,6 @@
 package com.shah.mvvmdemo.ui.featured
 
+import android.content.Context
 import android.text.SpannableString
 import android.text.style.StrikethroughSpan
 import android.view.LayoutInflater
@@ -13,7 +14,11 @@ import com.shah.mvvmdemo.R
 import com.shah.mvvmdemo.data.response.CourseDetails
 import com.squareup.picasso.Picasso
 
-class InnerRecyclerAdapter(private val courses: List<CourseDetails>, private val onClick: OnClick) : RecyclerView.Adapter<InnerRecyclerAdapter.InnerRecyclerViewHolder>() {
+class InnerRecyclerAdapter(
+    private val courses: List<CourseDetails>,
+    private val onClick: OnClick,
+    private val context: Context
+) : RecyclerView.Adapter<InnerRecyclerAdapter.InnerRecyclerViewHolder>() {
 
     interface OnClick{
         fun gotoDetails(course: CourseDetails)
@@ -38,17 +43,17 @@ class InnerRecyclerAdapter(private val courses: List<CourseDetails>, private val
 
     override fun onBindViewHolder(holder: InnerRecyclerViewHolder, position: Int) {
         val course = courses[position]
-        val cancelledPrice = SpannableString("${holder.price.text}${course.cancelledPrice}")
+        val cancelledPrice = SpannableString(context.getString(R.string.Rs, course.cancelledPrice))
         cancelledPrice.setSpan(StrikethroughSpan(),0,cancelledPrice.toString().length,0)
         Picasso.get()
             .load(course.imageUrl)
             .into(holder.imageView)
         holder.title.text = course.title
-        holder.teacher.text = course.teacher
+        holder.teacher.text = course.teacher.name
         holder.ratingBar.rating = course.rating
         holder.rating.text = course.rating.toString()
         holder.totalRatings.text = "(${course.totalRatings})"
-        holder.price.text = "${holder.price.text}${course.price}"
+        holder.price.text = context.getString(R.string.Rs, course.price)
         holder.cancelledPrice.text = cancelledPrice
         if (course.isBestseller){
             holder.bestseller.visibility = TextView.VISIBLE
