@@ -6,7 +6,7 @@
     app:startDestination="@id/featuredFragment">
     <fragment
         android:id="@+id/featuredFragment"
-        android:name="com.shah.mvvmdemo.ui.featured.FeaturedFragment"
+        android:name="com.shah.mvvmdemo.ui.home.featured.FeaturedFragment"
         android:label="fragment_featured"
         tools:layout="@layout/fragment_featured" />
     <fragment

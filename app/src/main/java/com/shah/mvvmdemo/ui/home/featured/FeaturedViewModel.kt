@@ -1,4 +1,4 @@
-package com.shah.mvvmdemo.ui.featured
+package com.shah.mvvmdemo.ui.home.featured
 
 import com.shah.mvvmdemo.R
 import com.shah.mvvmdemo.data.repository.UserRepository
@@ -13,7 +13,7 @@ class FeaturedViewModel(private val userRepository: UserRepository) :
         "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ89CCZmY4pB5cbLMhVIb168rrKgCOCGvUvIA&usqp=CAU"
     private val description =
         "Learn python like a Professional! Start from the basics and go all the way to create your own applicatons and games!"
-    private val toLearnList = arrayListOf<String>(
+    private val toLearnList = arrayListOf(
         "Learn to use Python professionally, learning both Python 2 and Python 3!",
         "Create games with Python, like Tic Tac Toe and Blackjack!",
         "Learn advanced Python features, like the collections module and how to work with timestamps!",
@@ -24,7 +24,7 @@ class FeaturedViewModel(private val userRepository: UserRepository) :
         "Build a complete understanding of Python from the ground up!"
     )
     private val detailedDescription = (R.string.detailed_description)
-    private val requirementsList = arrayListOf<String>("Access to a computer with an internet connection.")
+    private val requirementsList = arrayListOf("Access to a computer with an internet connection.")
 
     private val lecture1 = LectureDetails("Auto-Welcome Message","Article", "00:44 mins", 1)
     private val lecture2 = LectureDetails("Course Introduction","Video", "06:39 mins", 2)

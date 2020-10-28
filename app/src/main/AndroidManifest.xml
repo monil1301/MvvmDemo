@@ -12,21 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.course.CourseDetailActivity"
+        <activity android:name="com.shah.mvvmdemo.ui.home.course.CourseDetailActivity"
             android:parentActivityName=".ui.home.HomeActivity"
             android:label="">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.home.HomeActivity" />
         </activity>
-        <activity android:name=".ui.home.HomeActivity" />
-        <activity android:name=".ui.auth.AuthActivity" />
-        <activity android:name=".ui.MainActivity">
+        <activity android:name=".ui.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.auth.AuthActivity" />
+        <activity android:name=".ui.MainActivity">
+
         </activity>
     </application>
 

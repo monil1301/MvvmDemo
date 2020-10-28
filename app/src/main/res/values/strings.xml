@@ -26,6 +26,13 @@
     <string name="teacher">Created by %1$s</string>
     <string name="students">%1$s Students</string>
     <string name="course">%1$d Courses</string>
-    <string name="rating">%1$s Average Rating</string>
+    <string name="averageRating">%1$s Average Rating</string>
     <string name="show_more">SHOW MORE</string>
+    <string name="view_profile">View profile</string>
+    <string name="teacher_s_image">Teacher\'s image</string>
+    <string name="course_video">Course Video</string>
+    <string name="show_less">SHOW LESS</string>
+    <string name="rating">(%1$s)</string>
+    <string name="share">share</string>
+    <string name="cart">cart</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.shah.mvvmdemo.ui.course
+package com.shah.mvvmdemo.ui.home.course
 
 import android.content.Context
 import android.view.LayoutInflater

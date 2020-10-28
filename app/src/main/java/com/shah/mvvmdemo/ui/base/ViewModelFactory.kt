@@ -6,12 +6,13 @@ import com.shah.mvvmdemo.data.repository.AuthRepository
 import com.shah.mvvmdemo.data.repository.BaseRepository
 import com.shah.mvvmdemo.data.repository.UserRepository
 import com.shah.mvvmdemo.ui.auth.AuthViewModel
-import com.shah.mvvmdemo.ui.featured.FeaturedViewModel
+import com.shah.mvvmdemo.ui.home.featured.FeaturedViewModel
 import com.shah.mvvmdemo.ui.home.HomeViewModel
 import java.lang.IllegalArgumentException
 
 class ViewModelFactory(private val repository: BaseRepository) :  ViewModelProvider.NewInstanceFactory() {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return when {
             modelClass.isAssignableFrom(AuthViewModel::class.java) -> AuthViewModel(repository as AuthRepository) as T

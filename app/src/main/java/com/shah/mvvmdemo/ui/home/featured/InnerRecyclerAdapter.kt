@@ -1,4 +1,4 @@
-package com.shah.mvvmdemo.ui.featured
+package com.shah.mvvmdemo.ui.home.featured
 
 import android.content.Context
 import android.text.SpannableString
@@ -52,7 +52,7 @@ class InnerRecyclerAdapter(
         holder.teacher.text = course.teacher.name
         holder.ratingBar.rating = course.rating
         holder.rating.text = course.rating.toString()
-        holder.totalRatings.text = "(${course.totalRatings})"
+        holder.totalRatings.text = context.getString(R.string.rating, course.totalRatings)
         holder.price.text = context.getString(R.string.Rs, course.price)
         holder.cancelledPrice.text = cancelledPrice
         if (course.isBestseller){

@@ -1,4 +1,4 @@
-package com.shah.mvvmdemo.ui.featured
+package com.shah.mvvmdemo.ui.home.featured
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import com.shah.mvvmdemo.data.network.UserApi
 import com.shah.mvvmdemo.data.repository.UserRepository
 import com.shah.mvvmdemo.data.response.CourseDetails
 import com.shah.mvvmdemo.databinding.FragmentFeaturedBinding
-import com.shah.mvvmdemo.ui.course.CourseDetailActivity
+import com.shah.mvvmdemo.ui.home.course.CourseDetailActivity
 import com.shah.mvvmdemo.ui.base.BaseFragment
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
